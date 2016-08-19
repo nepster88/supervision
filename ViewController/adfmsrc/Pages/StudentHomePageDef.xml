@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="StudentHomePageDef" Package="Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Users1" RangeSize="25" DataControl="AppModuleAMDataControl"
+              id="Users1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Users1Iterator" id="Users1">
+      <nodeDefinition DefName="com.s3.model.uiview.UsersVO" Name="Users10">
+        <AttrNames>
+          <Item Value="UserId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="LoginName"/>
+          <Item Value="Password"/>
+          <Item Value="Email"/>
+          <Item Value="Type"/>
+          <Item Value="Mobile"/>
+          <Item Value="IsActive"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="ModifiedDate"/>
+          <Item Value="DateOfBirth"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

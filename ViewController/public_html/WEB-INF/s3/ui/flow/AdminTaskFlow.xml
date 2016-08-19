@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="AdmintaskFlow">
+    <default-activity id="__1">AdminHome</default-activity>
+    <view id="AdminHome"></view>
+    <view id="AdminProfile"></view>
+    <view id="ViewStudentsAD"></view>
+    <view id="ViewSupervisorAD"></view>
+    <task-flow-return id="Logout">
+      <outcome id="__16">
+        <name>logout</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__3">*</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome id="__6">supervisor</from-outcome>
+        <to-activity-id id="__5">ViewSupervisorAD</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__7">
+        <from-outcome id="__9">profile</from-outcome>
+        <to-activity-id id="__8">AdminProfile</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome id="__12">student</from-outcome>
+        <to-activity-id id="__11">ViewStudentsAD</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__13">
+        <from-outcome id="__15">home</from-outcome>
+        <to-activity-id id="__14">AdminHome</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__18">
+        <from-outcome id="__19">logout</from-outcome>
+        <to-activity-id id="__17">Logout</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
+

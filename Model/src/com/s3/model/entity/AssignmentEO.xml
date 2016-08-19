@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AssignmentEO"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="ASSIGNMENTS"
+  AliasName="AssignmentEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="AsgId"
+    IsNotNull="true"
+    ColumnName="ASG_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ASSIGNMENTS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Name"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="NAME"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ASSIGNMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="16"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="400"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ASSIGNMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="400"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CourseId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="COURSE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ASSIGNMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="16"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    IsNotNull="true"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ASSIGNMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedDate"
+    IsNotNull="true"
+    ColumnName="MODIFIED_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ASSIGNMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IsActive"
+    Precision="1"
+    Scale="0"
+    ColumnName="IS_ACTIVE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ASSIGNMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Comment"
+    Association="com.s3.model.entity.CommentsAssginmentsFkAssoc"
+    AssociationEnd="com.s3.model.entity.CommentsAssginmentsFkAssoc.Comment"
+    AssociationOtherEnd="com.s3.model.entity.CommentsAssginmentsFkAssoc.Assignment"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Course"
+    Association="com.s3.model.entity.AssignmentsCoursesFkAssoc"
+    AssociationEnd="com.s3.model.entity.AssignmentsCoursesFkAssoc.Course"
+    AssociationOtherEnd="com.s3.model.entity.AssignmentsCoursesFkAssoc.Assignment"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="StudentCoursersAssignment"
+    Association="com.s3.model.entity.StdCrsAsgAssginmentsFkAssoc"
+    AssociationEnd="com.s3.model.entity.StdCrsAsgAssginmentsFkAssoc.StudentCoursersAssignment"
+    AssociationOtherEnd="com.s3.model.entity.StdCrsAsgAssginmentsFkAssoc.Assignment"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="AssignmentsChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ASSIGNMENTS_CHK"/>
+      <Attr Name="_checkCondition" Value="IS_ACTIVE in (0,1)"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.s3.model.entity.AssignmentEO.IsActive"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AssignmentsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ASSIGNMENTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.s3.model.entity.AssignmentEO.AsgId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007740">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007740"/>
+      <Attr Name="_checkCondition" Value='"ASG_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.s3.model.entity.AssignmentEO.AsgId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007741">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007741"/>
+      <Attr Name="_checkCondition" Value='"NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.s3.model.entity.AssignmentEO.Name"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007742">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007742"/>
+      <Attr Name="_checkCondition" Value='"COURSE_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.s3.model.entity.AssignmentEO.CourseId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007743">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007743"/>
+      <Attr Name="_checkCondition" Value='"CREATED_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.s3.model.entity.AssignmentEO.CreatedDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007744">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007744"/>
+      <Attr Name="_checkCondition" Value='"MODIFIED_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.s3.model.entity.AssignmentEO.ModifiedDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AssignmentsCoursesFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="COURSES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ASSIGNMENTS_COURSES_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.s3.model.entity.AssignmentEO.CourseId"/>
+    </AttrArray>
+  </Key>
+</Entity>

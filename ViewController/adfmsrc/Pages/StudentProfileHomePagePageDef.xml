@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="StudentProfileHomePagePageDef"
+                Package="Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="UserVO" RangeSize="25" DataControl="AppModuleAMDataControl"
+              id="UserVOIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="UserVOIterator" id="UserId">
+      <AttrNames>
+        <Item Value="UserId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserVOIterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserVOIterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserVOIterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserVOIterator" id="Mobile">
+      <AttrNames>
+        <Item Value="Mobile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserVOIterator" id="DateOfBirth">
+      <AttrNames>
+        <Item Value="DateOfBirth"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

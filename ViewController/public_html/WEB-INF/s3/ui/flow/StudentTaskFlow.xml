@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="StudentTaskFlow">
+    <default-activity id="__1">StudentHome</default-activity>
+    <view id="StudentHome">
+      <page>/s3/ui/pages/StudentHomePage.jsff</page>
+    </view>
+    <task-flow-call id="StudentProfileTaskFlow">
+      <task-flow-reference>
+        <document>/WEB-INF/s3/ui/flow/StudentProfileTaskFlow.xml</document>
+        <id>StudentProfileTaskFlow</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <view id="Supervisor">
+      <page>/s3/ui/pages/SupervisorSTD.jsff</page>
+    </view>
+    <task-flow-return id="Logout">
+      <outcome id="__2">
+        <name>logout</name>
+      </outcome>
+    </task-flow-return>
+    <view id="Assignments"></view>
+    <view id="Courses"></view>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">*</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__7">home</from-outcome>
+        <to-activity-id id="__6">StudentHome</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__8">
+        <from-outcome id="__10">profile</from-outcome>
+        <to-activity-id id="__9">StudentProfileTaskFlow</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__12">
+        <from-outcome id="__13">supervisor</from-outcome>
+        <to-activity-id id="__11">Supervisor</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__15">
+        <from-outcome id="__16">assignment</from-outcome>
+        <to-activity-id id="__14">Assignments</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__17">
+        <from-outcome id="__19">course</from-outcome>
+        <to-activity-id id="__18">Courses</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__20">
+        <from-outcome id="__22">logout</from-outcome>
+        <to-activity-id id="__21">Logout</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

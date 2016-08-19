@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="login"></view>
+  <view id="student"></view>
+  <view id="supervisor"></view>
+  <view id="admin"></view>
+  <control-flow-rule id="__1">
+    <from-activity-id id="__2">student</from-activity-id>
+    <control-flow-case id="__3">
+      <from-outcome id="__5">logout</from-outcome>
+      <to-activity-id id="__4">login</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__6">
+    <from-activity-id id="__7">login</from-activity-id>
+    <control-flow-case id="__8">
+      <from-outcome id="__10">student</from-outcome>
+      <to-activity-id id="__9">student</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__17">
+      <from-outcome id="__18">supervisor</from-outcome>
+      <to-activity-id id="__16">supervisor</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__25">
+      <from-outcome id="__26">admin</from-outcome>
+      <to-activity-id id="__24">admin</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__11">
+    <from-activity-id id="__12">supervisor</from-activity-id>
+    <control-flow-case id="__14">
+      <from-outcome id="__15">logout</from-outcome>
+      <to-activity-id id="__13">login</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__19">
+    <from-activity-id id="__20">admin</from-activity-id>
+    <control-flow-case id="__22">
+      <from-outcome id="__23">logout</from-outcome>
+      <to-activity-id id="__21">login</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

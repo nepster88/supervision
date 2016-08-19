@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="StudentProfileTaskFlow">
+    <default-activity id="__1">StudentProfileHome</default-activity>
+    <transaction id="__21">
+      <new-transaction/>
+    </transaction>
+    <view id="StudentProfileHome">
+      <page>/s3/ui/pages/StudentProfileHomePage.jsff</page>
+    </view>
+    <view id="UpdateStudentProfile">
+      <page>/s3/ui/pages/UpdateStudentProfilePage.jsff</page>
+    </view>
+    <view id="ChangePassword">
+      <page>/s3/ui/pages/ChangePasswordPageSTD.jsff</page>
+    </view>
+    <task-flow-return id="Commit">
+      <outcome id="__3">
+        <name>profile</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Rollback">
+      <outcome id="__4">
+        <name>profile</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Home">
+      <outcome id="__24">
+        <name>home</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Supervisor">
+      <outcome id="__2">
+        <name>supervisor</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Assignment">
+      <outcome id="__31">
+        <name>assignment</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Logout">
+      <outcome id="__35">
+        <name>logout</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Course">
+      <outcome id="__39">
+        <name>course</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__5">
+      <from-activity-id id="__6">UpdateStudentProfile</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome id="__9">commit</from-outcome>
+        <to-activity-id id="__8">Commit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome id="__12">rollback</from-outcome>
+        <to-activity-id id="__11">Rollback</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__19">
+        <from-outcome id="__20">changePass</from-outcome>
+        <to-activity-id id="__18">ChangePassword</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__13">
+      <from-activity-id id="__14">StudentProfileHome</from-activity-id>
+      <control-flow-case id="__15">
+        <from-outcome id="__17">update</from-outcome>
+        <to-activity-id id="__16">UpdateStudentProfile</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__22">
+      <from-activity-id id="__23">*</from-activity-id>
+      <control-flow-case id="__26">
+        <from-outcome id="__27">home</from-outcome>
+        <to-activity-id id="__25">Home</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__28">
+        <from-outcome id="__30">supervisor</from-outcome>
+        <to-activity-id id="__29">Supervisor</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__33">
+        <from-outcome id="__34">assignment</from-outcome>
+        <to-activity-id id="__32">Assignment</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__36">
+        <from-outcome id="__38">logout</from-outcome>
+        <to-activity-id id="__37">Logout</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__41">
+        <from-outcome id="__42">course</from-outcome>
+        <to-activity-id id="__40">Course</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

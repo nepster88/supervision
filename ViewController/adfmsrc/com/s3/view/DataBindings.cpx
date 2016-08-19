@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.64.93" id="DataBindings" SeparateXMLFiles="false"
+             Package="com.s3.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/WEB-INF/Pages/StudentHome.jspx"
+          usageId="com_s3_view_StudentHomePageDef"/>
+    <page path="/StudentHomePage.jsff"
+          usageId="com_s3_view_StudentHomePagePageDef"/>
+    <page path="/view1.jspx" usageId="com_s3_view_view1PageDef"/>
+    <page path="/s3/ui/pages/StudentProfileHomePage.jsff"
+          usageId="com_s3_view_StudentProfileHomePagePageDef"/>
+    <page path="/s3/ui/pages/UpdateStudentProfilePage.jsff"
+          usageId="com_s3_view_UpdateStudentProfilePagePageDef"/>
+    <page path="/view2.jspx" usageId="com_s3_view_view2PageDef"/>
+    <page path="/s3/ui/pages/SupervisorSTD.jsff"
+          usageId="com_s3_view_SupervisorSTDPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_s3_view_StudentHomePageDef" path="Pages.StudentHomePageDef"/>
+    <page id="com_s3_view_StudentHomePagePageDef"
+          path="com.s3.view.pageDefs.StudentHomePagePageDef"/>
+    <page id="com_s3_view_view1PageDef"
+          path="com.s3.view.pageDefs.view1PageDef"/>
+    <page id="com_s3_view_StudentProfileHomePagePageDef"
+          path="Pages.StudentProfileHomePagePageDef"/>
+    <page id="com_s3_view_UpdateStudentProfilePagePageDef"
+          path="Pages.UpdateStudentProfilePagePageDef"/>
+    <page id="com_s3_view_view2PageDef"
+          path="com.s3.view.pageDefs.view2PageDef"/>
+    <page id="com_s3_view_SupervisorSTDPageDef"
+          path="s3.ui.pages.SupervisorSTDPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleAMDataControl" Package="com.s3.model.module"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="AppModuleAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="view1PageDef"
+                Package="com.s3.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="StudentTaskFlow1"
+              taskFlowId="/WEB-INF/StudentTaskFlow.xml#StudentTaskFlow"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="StudentTaskFlow2"
+              taskFlowId="/WEB-INF/s3/ui/flow/StudentTaskFlow.xml#StudentTaskFlow"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

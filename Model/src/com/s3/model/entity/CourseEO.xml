@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CourseEO"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="COURSES"
+  AliasName="CourseEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="CourseId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="COURSE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="COURSES"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="16"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Name"
+    IsNotNull="true"
+    Precision="40"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COURSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="200"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COURSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IsActive"
+    Precision="1"
+    Scale="0"
+    ColumnName="IS_ACTIVE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="COURSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    IsNotNull="true"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="COURSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedDate"
+    IsNotNull="true"
+    ColumnName="MODIFIED_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="COURSES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Comment"
+    Association="com.s3.model.entity.CommentsCoursesFkAssoc"
+    AssociationEnd="com.s3.model.entity.CommentsCoursesFkAssoc.Comment"
+    AssociationOtherEnd="com.s3.model.entity.CommentsCoursesFkAssoc.Course"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Assignment"
+    Association="com.s3.model.entity.AssignmentsCoursesFkAssoc"
+    AssociationEnd="com.s3.model.entity.AssignmentsCoursesFkAssoc.Assignment"
+    AssociationOtherEnd="com.s3.model.entity.AssignmentsCoursesFkAssoc.Course"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Enrollment"
+    Association="com.s3.model.entity.EnrollmentsCoursesFkAssoc"
+    AssociationEnd="com.s3.model.entity.EnrollmentsCoursesFkAssoc.Enrollment"
+    AssociationOtherEnd="com.s3.model.entity.EnrollmentsCoursesFkAssoc.Course"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="StudentCoursersAssignment"
+    Association="com.s3.model.entity.StdCrsAsgCoursesFkAssoc"
+    AssociationEnd="com.s3.model.entity.StdCrsAsgCoursesFkAssoc.StudentCoursersAssignment"
+    AssociationOtherEnd="com.s3.model.entity.StdCrsAsgCoursesFkAssoc.Course"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SupervisorCourse"
+    Association="com.s3.model.entity.SupCrsCoursesFkAssoc"
+    AssociationEnd="com.s3.model.entity.SupCrsCoursesFkAssoc.SupervisorCourse"
+    AssociationOtherEnd="com.s3.model.entity.SupCrsCoursesFkAssoc.Course"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="CoursesChk">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="COURSES_CHK"/>
+      <Attr Name="_checkCondition" Value="IS_ACTIVE in (0,1)"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.s3.model.entity.CourseEO.IsActive"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CoursesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="COURSES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.s3.model.entity.CourseEO.CourseId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007736">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007736"/>
+      <Attr Name="_checkCondition" Value='"COURSE_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.s3.model.entity.CourseEO.CourseId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007737">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007737"/>
+      <Attr Name="_checkCondition" Value='"NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.s3.model.entity.CourseEO.Name"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007738">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007738"/>
+      <Attr Name="_checkCondition" Value='"CREATED_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.s3.model.entity.CourseEO.CreatedDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007739">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007739"/>
+      <Attr Name="_checkCondition" Value='"MODIFIED_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.s3.model.entity.CourseEO.ModifiedDate"/>
+    </AttrArray>
+  </Key>
+</Entity>

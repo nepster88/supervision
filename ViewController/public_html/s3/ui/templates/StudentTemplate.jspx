@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>StudenTemplate</display-name>
+        <facet>
+          <facet-name>
+            MenuFacet
+          </facet-name>
+        </facet>
+        <facet>
+          <facet-name>
+            ContentFacet
+          </facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>
+            title
+          </attribute-name>
+          <attribute-class>
+            java.lang.String
+          </attribute-class>
+          <required>
+            false
+          </required>
+        </attribute>
+      </component>
+    </af:xmlContent>
+    <af:panelStretchLayout topHeight="82px" startWidth="100px" id="pt_psl2"
+                           inlineStyle="border-color:Blue; border-style:ridge; border-width:thick;">
+      <f:facet name="top">
+        <af:panelGroupLayout id="pt_pgl1" styleClass="AFStretchWidth"
+                             inlineStyle="background-color:White;"
+                             valign="middle">
+          <af:panelGroupLayout id="pt_pgl2">
+            <af:outputText value="S3" id="pt_ot1"
+                           inlineStyle="font-family:'Agency FB'; font-size:500.0%; color:red; font-weight:bolder;"/>
+          </af:panelGroupLayout>
+          <af:panelGroupLayout id="pt_pgl3" halign="right"
+                               inlineStyle="float:right;"
+                               valign="top">
+            <af:commandButton text="Logout" id="pt_cb1" action="logout"
+                              rendered="true"/>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
+      </f:facet>
+      <f:facet name="center">
+        <!-- id="af_twocol_left_full_header_Stretched"   -->
+        <af:panelStretchLayout startWidth="179px" id="pt_psl1">
+          <f:facet name="center">
+            <af:panelSplitter id="pt_ps1" splitterPosition="206">
+              <f:facet name="first">
+                <af:panelStretchLayout id="pt_psl3" endWidth="50px"
+                                       inlineStyle="border-color:Black; border-style:solid; border-width:thin;">
+                  <f:facet name="center">
+                    <af:panelList id="pt_pl1"
+                                  inlineStyle="list-style-type:square;">
+                      <af:commandLink text="Home" id="pt_cl5" action="home"/>
+                      <af:commandLink text="My Profile" id="pt_cl1"
+                                      action="profile"/>
+                      <af:commandLink text="View course" id="pt_cl2"
+                                      action="course"/>
+                      <af:commandLink text="View Supervisor" id="pt_cl3"
+                                      action="supervisor"/>
+                      <af:commandLink text="View Submissions" id="pt_cl4"
+                                      action="assignment"/>
+                    </af:panelList>
+                  </f:facet>
+                </af:panelStretchLayout>
+              </f:facet>
+              <f:facet name="second">
+                <af:panelStretchLayout id="pt_psl4"
+                                       inlineStyle="border-color:Black; border-style:solid; border-width:thin;">
+                  <f:facet name="center">
+                    <af:facetRef facetName="ContentFacet"/>
+                  </f:facet>
+                </af:panelStretchLayout>
+              </f:facet>
+            </af:panelSplitter>
+          </f:facet>
+        </af:panelStretchLayout>
+      </f:facet>
+    </af:panelStretchLayout>
+  </af:pageTemplateDef>
+</jsp:root>

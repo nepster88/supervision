@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="SupervisorTaskFlow">
+    <default-activity id="__1">SupervisorHome</default-activity>
+    <view id="SupervisorHome"></view>
+    <view id="SupervisorProfile"></view>
+    <view id="ViewStudent"></view>
+    <view id="ViewCourses"></view>
+    <view id="ViewAssignments"></view>
+    <task-flow-return id="Logout">
+      <outcome id="__19">
+        <name>logout</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__2">*</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__6">profile</from-outcome>
+        <to-activity-id id="__4">SupervisorProfile</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__8">
+        <from-outcome id="__9">assignments</from-outcome>
+        <to-activity-id id="__7">ViewAssignments</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome id="__12">courses</from-outcome>
+        <to-activity-id id="__11">ViewCourses</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__14">
+        <from-outcome id="__15">students</from-outcome>
+        <to-activity-id id="__13">ViewStudent</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__17">
+        <from-outcome id="__18">home</from-outcome>
+        <to-activity-id id="__16">SupervisorHome</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__21">
+        <from-outcome id="__23">logout</from-outcome>
+        <to-activity-id id="__20">Logout</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
+

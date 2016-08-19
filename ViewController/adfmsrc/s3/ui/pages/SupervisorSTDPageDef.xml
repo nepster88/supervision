@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="SupervisorSTDPageDef"
+                Package="s3.ui.pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SupervisorByStudent1" RangeSize="25"
+              DataControl="AppModuleAMDataControl"
+              id="SupervisorByStudent1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="SupervisorByStudent1Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SupervisorByStudent1Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SupervisorByStudent1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SupervisorByStudent1Iterator" id="Mobile">
+      <AttrNames>
+        <Item Value="Mobile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SupervisorByStudent1Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
